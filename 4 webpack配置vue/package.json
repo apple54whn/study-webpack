@@ -19,7 +19,11 @@
     "less-loader": "^4.1.0",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^3.7.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }

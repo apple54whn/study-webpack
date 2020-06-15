@@ -440,67 +440,69 @@ function toComment(sourceMap) {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_poem_js__ = __webpack_require__(4);
+
+
+var _poem = __webpack_require__(3);
+
+var poem = _interopRequireWildcard(_poem);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 // CommonJS
-var { formatDate } = __webpack_require__(3);
+var _require = __webpack_require__(4),
+    formatDate = _require.formatDate;
 
 console.log(formatDate(new Date()));
 
 // ES6
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_poem_js__["a" /* SPRING */]);
+console.log(poem.SPRING);
 
 // CommonJS 语法，不能使用 ES6，那是针对 JS 的
 __webpack_require__(5);
 __webpack_require__(9);
 document.writeln("World");
 
-
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var SPRING = "天街小雨润如酥，草色遥看近却无。最是一年春好处，绝胜烟柳满皇都。";
+var SUMMER = "毕竟西湖六月中，风光不与四时同。接天莲叶无穷碧，映日荷花别样红。";
+var AUTUMN = "银烛秋光冷画屏，轻罗小扇扑流萤。天阶夜色凉如水，坐看牵牛织女星。";
+var WINTER = "日暮苍山远，天寒白屋贫。柴门闻犬吠，风雪夜归人。";
+
+// ES6
+exports.SPRING = SPRING;
+exports.SUMMER = SUMMER;
+exports.AUTUMN = AUTUMN;
+exports.WINTER = WINTER;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 function formatDate(date) {
-  return `${date.getFullYear()}-${
-    date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1
-  }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()} ${
-    date.getHours() < 10 ? "0" + date.getHours() : date.getHours()
-  }:${date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}:${
-    date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()
-  }`;
+  return date.getFullYear() + "-" + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1) + "-" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + " " + (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":" + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()) + ":" + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds());
 }
 
 // CommonJS
 // 可以省略掉 module
 module.exports = {
-  formatDate,
+  formatDate: formatDate
 };
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SPRING; });
-/* unused harmony export SUMMER */
-/* unused harmony export AUTUMN */
-/* unused harmony export WINTER */
-const SPRING =
-  "天街小雨润如酥，草色遥看近却无。最是一年春好处，绝胜烟柳满皇都。";
-const SUMMER =
-  "毕竟西湖六月中，风光不与四时同。接天莲叶无穷碧，映日荷花别样红。";
-const AUTUMN =
-  "银烛秋光冷画屏，轻罗小扇扑流萤。天阶夜色凉如水，坐看牵牛织女星。";
-const WINTER = "日暮苍山远，天寒白屋贫。柴门闻犬吠，风雪夜归人。";
-
-// ES6
-
-
 
 /***/ }),
 /* 5 */

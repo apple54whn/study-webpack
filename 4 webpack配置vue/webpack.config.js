@@ -1,5 +1,6 @@
 // 这个会从 node 中查找，需要 npm init 来生成 package.json
 const path = require("path");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
   entry: "./src/main.js",
@@ -61,6 +62,22 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
     ],
   },
+  resolve: {
+    // 在 .vue 文件中导入如下文件时可以省略后缀
+    extensions: [".js", ".vue", ".css"],
+    alias: {
+      // 指定发布的版本
+      vue$: "vue/dist/vue.esm.js", // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+    },
+  },
+  plugins: [
+    // 请确保引入这个插件！
+    new VueLoaderPlugin(),
+  ],
 };
